@@ -37,7 +37,7 @@ function App() {
         </div>
 
         <div className="card users-card">
-          <h2>HelloUsers</h2>
+          <h2>Hello Users My name is Muhammad Suleman Faiz and how are you </h2>
 
           <div className="users-list">
             {users.map(user => (
