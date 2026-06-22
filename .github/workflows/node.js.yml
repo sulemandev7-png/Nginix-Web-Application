@@ -21,19 +21,19 @@ jobs:
 
       - name: Build Frontend
         run: |
-          docker build -t ${{ secrets.DOCKER_USERNAME }}/nginix-practice-image:frontend-v1 ./Docker-Project/frontend
+          docker build -t ${{ secrets.DOCKER_USERNAME }}/nginix-practice-image:frontend-latest ./Docker-Project/frontend
 
       - name: Build Backend
         run: |
-          docker build -t ${{ secrets.DOCKER_USERNAME }}/nginix-practice-image:backend-v1 ./Docker-Project/backend
+          docker build -t ${{ secrets.DOCKER_USERNAME }}/nginix-practice-image:backend-latest ./Docker-Project/backend
 
       - name: Push Frontend
         run: |
-          docker push ${{ secrets.DOCKER_USERNAME }}/nginix-practice-image:frontend-v1
+          docker push ${{ secrets.DOCKER_USERNAME }}/nginix-practice-image:frontend-latest
 
       - name: Push Backend
         run: |
-          docker push ${{ secrets.DOCKER_USERNAME }}/nginix-practice-image:backend-v1
+          docker push ${{ secrets.DOCKER_USERNAME }}/nginix-practice-image:backend-latest
 
       - name: Deploy to EC2
         uses: appleboy/ssh-action@v1.0.3
