@@ -6,7 +6,7 @@ export default defineConfig({
   server: {
     host: true,
     port: 5173,  
-     allowedHosts: 'all',      // ← explicitly declare port
+     allowedHosts: true,      // ← explicitly declare port
     strictPort: true,  // ← fail if port is taken (no silent port switching)
     watch: {
       usePolling: true,

@@ -28,7 +28,7 @@ function App() {
 
           {apiStatus ? (
             <>
-              <div className="status-badge">● {apiStatus.status}</div>
+              <div className="status-badge"> ● {apiStatus.status}</div>
               <p className="message">{apiStatus.message}</p>
             </>
           ) : (
@@ -47,7 +47,7 @@ function App() {
             {users.map(user => (
               <div className="user-box" key={user.id}>
                 <div className="avatar">{user.name.charAt(0)}</div>
-                <div>
+                <div> 
                   <h3>{user.name}</h3>
                   <p>User ID: {user.id}</p>
                 </div>
