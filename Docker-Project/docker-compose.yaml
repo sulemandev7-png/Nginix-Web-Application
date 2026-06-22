@@ -4,25 +4,22 @@ services:
   frontend:
     build: ./frontend
     expose:
-      - "5173"          # only visible INSIDE docker, not to outside world
-    volumes:
-      - ./frontend:/app
-      - /app/node_modules
+      - "80"
 
   backend:
-    build: ./backendchange 
+    build: ./backend
     expose:
-      - "3000"          # only visible INSIDE docker, not to outside world
+      - "3000"
     volumes:
       - ./backend:/app
       - /app/node_modules
 
   nginx:
-    image: nginx:alpine       # nginx official docker image
+    image: nginx:alpine
     ports:
-      - "80:80"               # only nginx talks to outside world
+      - "80:80"
     volumes:
-      - ./nginx.conf:/etc/nginx/nginx.conf:ro   # use YOUR conf file
+      - ./nginx.conf:/etc/nginx/nginx.conf:ro
     depends_on:
       - frontend
       - backend

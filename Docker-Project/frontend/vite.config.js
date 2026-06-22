@@ -5,12 +5,12 @@ export default defineConfig({
   plugins: [react()],
   server: {
     host: true,
-    port: 5173,  
-     allowedHosts: true,      // ← explicitly declare port
-    strictPort: true,  // ← fail if port is taken (no silent port switching)
+    port: 5173,
+    allowedHosts: ['devpro.biz', 'www.devpro.biz'],
+    strictPort: true,
     watch: {
       usePolling: true,
       interval: 1000
     }
   }
-})  
+})
