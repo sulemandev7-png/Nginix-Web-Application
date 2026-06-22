@@ -42,7 +42,8 @@ jobs:
           username: ${{ secrets.EC2_USERNAME }}
           key: ${{ secrets.EC2_SSH_KEY }}
           script: |
-            cd ~
+            cd ~/Nginix-Web-Application/Docker-Project
+            git pull origin main
             sudo docker compose pull
             sudo docker compose down
             sudo docker compose up -d
